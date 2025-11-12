@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bond Energy Simulator</title>
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 24px; }
+  </style>
 </head>
 <body>
   <div id="root"></div>
 
-  <script type="text/javascript">
+  <!-- React 17 UMD builds (safest for a quick hello) -->
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+  <script>
+    // No JSX / No Babel — just React.createElement so it runs everywhere
     const App = () => React.createElement("h1", null, "Bond Energy Simulator Loaded!");
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(React.createElement(App));
+
+    const rootEl = document.getElementById("root");
+    ReactDOM.render(React.createElement(App), rootEl);
   </script>
 </body>
 </html>
